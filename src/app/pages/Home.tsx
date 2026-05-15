@@ -1,4 +1,4 @@
-import { Music2, TrendingUp, QrCode } from "lucide-react";
+import { Music2, TrendingUp, QrCode, Users } from "lucide-react";
 import { Link } from "react-router";
 
 export default function Home() {
@@ -9,22 +9,34 @@ export default function Home() {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mb-4">
             <Music2 className="w-10 h-10 text-white" />
           </div>
+
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
             Music Vote
           </h1>
+
           <p className="text-gray-600">
-            Vote for your favorite tracks and see what's trending
+            Create a party room, scan the QR code, and vote for the next song.
           </p>
         </div>
 
         <div className="space-y-4">
           <Link
-            to="/scanner"
+            to="/host"
             className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
           >
             <div className="flex items-center justify-center gap-3">
               <QrCode className="w-6 h-6" />
-              <span className="font-semibold">Scan Event QR Code</span>
+              <span className="font-semibold">Create Voting Room</span>
+            </div>
+          </Link>
+
+          <Link
+            to="/scanner"
+            className="block w-full bg-white text-purple-700 py-4 px-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div className="flex items-center justify-center gap-3">
+              <Users className="w-6 h-6" />
+              <span className="font-semibold">Join With Event Code</span>
             </div>
           </Link>
 
@@ -32,9 +44,13 @@ export default function Home() {
             <div className="flex items-start gap-3 mb-3">
               <TrendingUp className="w-5 h-5 text-purple-600 mt-1" />
               <div>
-                <h2 className="font-semibold text-gray-900 mb-1">How it works</h2>
+                <h2 className="font-semibold text-gray-900 mb-1">
+                  How it works
+                </h2>
                 <p className="text-sm text-gray-600">
-                  Scan the event QR code to join. Upvote songs you love, downvote ones you don't. Watch the rankings change in real-time as others vote.
+                  The host creates a room and shares a QR code. Guests scan it
+                  with their phone camera, join the queue, and vote before the
+                  timer runs out.
                 </p>
               </div>
             </div>
